@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neptune Info Portal</title>
+
+<style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family:'Roboto', sans-serif;
+    background: radial-gradient(ellipse at center, #1b2f4a 0%, #041026 100%);
+    color: #aee6ff;
+}
+
+
+h1, h2, h3 {
+    color: #d0f0ff;
+    text-align: center;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #aee6ff;
+}
+
+.sidebar a {
+    display: block;
+    color: #aee6ff;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #0b1d3a;
+    color: #fff;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 40px;
+}
+
+
+.card {
+    background: rgba(0, 77, 128, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.flex-img {
+    float: left;
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 100px;
+    transition: transform 0.3s ease;
+}
+
+.flex-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Details/Accordion */
+details {
+    background: rgba(0, 170, 255, 0.2);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+summary {
+    font-size: 18px;
+    color: #00ffff;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: ' ▾';
+    float: right;
+}
+
+details[open] summary::after {
+    content: ' ▴';
+}
+
+details div {
+    padding: 10px 0 0 0;
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 18px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #00ffff;
+    background: linear-gradient(135deg, #041026, #0b1d3a);
+    color: #aee6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #0ff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .flex-img {
+        width: 120px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Neptune Info</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#formation">Formation & Evolution</a>
+    <a href="#characteristics">Key Characteristics</a>
+    <a href="#atmosphere">Atmosphere Layers</a>
+    <a href="#orbits">Orbits & Motion</a>
+    <a href="#missions">Key Missions</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1>Neptune: The Stormy Ice Giant of the Solar System</h1>
+
+    <!-- Introduction -->
+    <div id="introduction" class="card">
+        <details open>
+            <summary>Introduction</summary>
+            <div>
+                <img src="neptune.jpg" alt="Neptune" class="flex-img">
+                <p>Neptune is the eighth and most distant planet from the Sun, classified as an ice giant. It is known for its fast winds, dynamic storms, and deep blue color caused by methane in its atmosphere. Discovered in 1846 through mathematical prediction, Neptune orbits at ~4.5 billion km from the Sun.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Formation -->
+    <div id="formation" class="card">
+        <details open>
+            <summary>Formation and Evolution</summary>
+            <div>
+                <p>Neptune formed ~4.5 billion years ago from the solar nebula. It accumulated icy materials like water, ammonia, methane, along with hydrogen and helium. Its internal heat drives powerful winds and storms.</p>
+                <p>Its distant location and retained heat influence convection and atmospheric dynamics. Triton’s capture and early gravitational interactions shaped its moons and faint rings.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Key Characteristics -->
+    <div id="characteristics" class="card">
+        <details open>
+            <summary>Key Characteristics</summary>
+            <div>
+                <ul>
+                    <li>Ice Giant: Composed mainly of water, ammonia, and methane ices</li>
+                    <li>Deep blue color due to methane</li>
+                    <li>Cloud-top temperatures: ~–218°C</li>
+                    <li>Fastest winds in solar system: >2,000 km/h</li>
+                    <li>Dynamic storms and vortices</li>
+                    <li>Strong, tilted, offset magnetic field</li>
+                    <li>No solid surface</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Atmosphere -->
+    <div id="atmosphere" class="card">
+        <details open>
+            <summary>Layers of Neptune Atmosphere</summary>
+            <div>
+                <ul>
+                    <li>Upper Atmosphere: Hydrogen, helium, methane; bright clouds and storm systems</li>
+                    <li>Cloud Layers:
+                        <ul>
+                            <li>Upper: Methane ice clouds (methane snow)</li>
+                            <li>Middle: Haze and hydrocarbons</li>
+                            <li>Lower: Hydrogen sulfide ice clouds</li>
+                        </ul>
+                    </li>
+                    <li>Storms: Large swirling vortices, temporary in nature</li>
+                    <li>Mantle: Hot fluid layer of water, ammonia, methane ices, possible liquid ocean</li>
+                    <li>Core: Solid, rocky, Earth-sized, extremely dense and hot</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Orbits -->
+    <div id="orbits" class="card">
+        <details open>
+            <summary>Orbits and Motion</summary>
+            <div>
+                <ul>
+                    <li>Rotation: ~16h 6m, differential rotation (Poles: 12h, Equator: 18h)</li>
+                    <li>Revolution: 164.8 Earth years</li>
+                    <li>Orbit: Nearly circular; seasons ~40 Earth years each</li>
+                    <li>Moons: Triton (retrograde, geologically active), inner regular moons, outer irregular moons</li>
+                    <li>Rings: 5 faint rings; outer Adams ring has stable arcs influenced by moon Galatea</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Missions -->
+    <div id="missions" class="card">
+        <details open>
+            <summary>Key Missions</summary>
+            <div>
+                <ul>
+                    <li><strong>Voyager 2 (1989):</strong> Only spacecraft to visit Neptune; discovered extreme winds, storms, and 10 new moons.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <a href="secondmain.html" class="btn">Back to Space</a>
+</div>
+
+</body>
+</html>

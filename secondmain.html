@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Solar System</title>
+<style>
+
+body {
+    background: radial-gradient(circle at 20% 30%, #1c3341, #0a2c52 50%, #140d45 100%);
+    color: white;
+}
+
+.dashboard-btn{
+    display:block;
+    margin:40px auto;
+    padding:14px 35px;
+    font-size:1.1em;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg, #1e90ff, #00bfff);
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    box-shadow:0 0 20px #1e90ff;
+    transition:0.3s ease-in-out;
+}
+
+.dashboard-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px #00bfff;
+    background:linear-gradient(45deg, #00bfff, #1e90ff);
+}
+.visual{
+    height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+
+.sun{
+    width:150px;
+    height:150px;
+    background:url("sun\ image.jpg") center/cover no-repeat;
+    border-radius:50%;
+    box-shadow:0 0 60px orange;
+    position:absolute;
+}
+
+
+.orbit{
+    position:absolute;
+    border:2px dotted rgba(255,255,255,0.15);
+    border-radius:50%;
+    animation:spin linear infinite;
+}
+
+.orbit img{
+    position:absolute;
+    top:-20px;
+    left:50%;
+   
+    border-radius:50%;
+}
+
+
+.mercury{width:200px;height:200px;animation-duration:6s;}
+.venus{width:260px;height:260px;animation-duration:8s;}
+.earth{width:320px;height:320px;animation-duration:10s;}
+.mars{width:380px;height:380px;animation-duration:12s;}
+.jupiter{width:450px;height:450px;animation-duration:14s;}
+.saturn{width:520px;height:520px;animation-duration:16s;}
+.uranus{width:600px;height:600px;animation-duration:18s;}
+.neptune{width:680px;height:680px;animation-duration:20s;}
+
+.mercury img{width:16px;}
+.venus img{width:22px;}
+.earth img{width:26px;}
+.mars img{width:22px;}
+.jupiter img{width:40px;}
+.saturn img{width:38px;}
+.uranus img{width:35px;}
+.neptune img{width:33px;}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.gallery{
+    padding:60px;
+    background:#0000005e;
+}
+
+.gallery h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2em;
+}
+
+.planets{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:35px;
+    perspective:1000px;
+}
+
+
+.card{
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    transition:0.4s transform, 0.4s box-shadow;
+    cursor:pointer;
+}
+
+
+.card:hover{
+    transform:translateY(-12px) rotateY(10deg) scale(1.15);
+}
+
+
+.card img{
+    width:110px;
+    margin-bottom:12px;
+    border-radius:50%;
+    transition:0.4s transform;
+}
+
+.card:hover img{
+    transform:scale(1.25) rotate(15deg);
+}
+
+.card span{
+    font-weight:bold;
+    display:block;
+    font-size:1.1em;
+}
+
+
+.sun-card{
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    box-shadow:0 0 35px orange;
+}
+
+.mercury-card{
+    background: linear-gradient(45deg, #a9a9a9, #7f7f7f);
+    box-shadow:0 0 25px #888;
+}
+
+.venus-card{
+    background: linear-gradient(45deg, #f5deb3, #deb887);
+    box-shadow:0 0 25px #f5deb3;
+}
+
+.earth-card{
+    background: linear-gradient(45deg, #2c75ff, #0a3d91);
+    box-shadow:0 0 30px #2c75ff;
+}
+
+.mars-card{
+    background: linear-gradient(45deg, #ff4500, #b22222);
+    box-shadow:0 0 30px #ff4500;
+}
+
+.jupiter-card{
+    background: linear-gradient(45deg, #f4a460, #d2691e);
+    box-shadow:0 0 30px #f4a460;
+}
+
+.saturn-card{
+    background: linear-gradient(45deg, #f0e68c, #d2b48c);
+    box-shadow:0 0 30px #f0e68c;
+}
+
+.uranus-card{
+    background: linear-gradient(45deg, #66ccff, #3399ff);
+    box-shadow:0 0 30px #66ccff;
+}
+
+.neptune-card{
+    background: linear-gradient(45deg, #4169e1, #000080);
+    box-shadow:0 0 30px #4169e1;
+}
+
+
+.card:hover{
+    box-shadow:0 0 40px rgba(255,165,0,0.6);
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="visual">
+
+    <div class="sun"></div>
+
+    <div class="orbit mercury"><img src="mercury.jpg" alt="Mercury"></div>
+    <div class="orbit venus"><img src="venus.jpg" alt="Venus"></div>
+    <div class="orbit earth"><img src="earth.jpg" alt="Earth"></div>
+    <div class="orbit mars"><img src="mars.jpg" alt="Mars"></div>
+    <div class="orbit jupiter"><img src="jupitor.jpg" alt="Jupiter"></div>
+    <div class="orbit saturn"><img src="saturn.jpg" alt="Saturn"></div>
+    <div class="orbit uranus"><img src="uranus.jpg" alt="Uranus"></div>
+    <div class="orbit neptune"><img src="neptune.jpg" alt="Neptune"></div>
+
+</div>
+
+
+<div class="gallery">
+    <h2>Explore the Solar System</h2>
+
+    <div class="planets">
+
+        <div class="card sun-card" onclick="location.href='sun.html'">
+            <img src="sun image.jpg" alt="Sun">
+            <span>Sun</span>
+        </div>
+
+        <div class="card mercury-card" onclick="location.href='mercury.html'">
+            <img src="mercury.jpg" alt="Mercury">
+            <span>Mercury</span>
+        </div>
+
+        <div class="card venus-card" onclick="location.href='venus.html'">
+            <img src="venus.jpg" alt="Venus">
+            <span>Venus</span>
+        </div>
+
+        <div class="card earth-card" onclick="location.href='earth.html'">
+            <img src="earth.jpg" alt="Earth">
+            <span>Earth</span>
+        </div>
+
+        <div class="card mars-card" onclick="location.href='mars.html'">
+            <img src="mars.jpg" alt="Mars">
+            <span>Mars</span>
+        </div>
+
+        <div class="card jupiter-card" onclick="location.href='jupitor.html'">
+            <img src="jupitor.jpg" alt="Jupiter">
+            <span>Jupiter</span>
+        </div>
+
+        <div class="card saturn-card" onclick="location.href='saturn.html'">
+            <img src="saturn.jpg" alt="Saturn">
+            <span>Saturn</span>
+        </div>
+
+        <div class="card uranus-card" onclick="location.href='uranus.html'">
+            <img src="uranus.jpg" alt="Uranus">
+            <span>Uranus</span>
+        </div>
+
+        <div class="card neptune-card" onclick="location.href='neptune.html'">
+            <img src="neptune.jpg" alt="Neptune">
+            <span>Neptune</span>
+        </div>
+
+    </div>
+</div>
+ <button class="dashboard-btn" onclick="location.href='dashboard.html'">
+     Back to Dashboard
+</button>
+
+
+</body>
+</html> 
+
+
+
+
+
+
+
+
+

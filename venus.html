@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venus Info Portal</title>
+
+<style>
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body background for Venus theme */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient( #ffb366 0%, #cc6600 70%, #993300 100%);
+    color: #fff4cc;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff1cc;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffd966;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #cc6600;
+    color: #fff;
+}
+
+/* Main Content */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Image styling */
+.flex-img {
+    float: left;
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 100px;
+    transition: transform 0.3s ease;
+}
+
+.flex-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fff;
+}
+
+/* Section Titles */
+.section-title {
+    color: #ffd966;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Accordion / Details */
+details {
+    background: rgba(255, 204, 102, 0.8);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+
+
+
+
+details div {
+    padding: 10px 0 0 0;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    border: 2px solid #ffd966;
+    background: linear-gradient(135deg, #cc6600, #993300);
+    color: #fff4cc;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,204,102,0.8);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .flex-img {
+        width: 180px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Venus Info</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#formation">Formation & Evolution</a>
+    <a href="#characteristics">Key Characteristics</a>
+    <a href="#atmosphere">Atmosphere</a>
+    <a href="#orbits">Orbits & Motion</a>
+    <a href="#missions">Key Missions</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1 style="text-align:center;">Venus: The Hottest Planet</h1>
+
+    <!-- Introduction -->
+    <div id="introduction" class="card">
+        <details open>
+            <summary>Introduction</summary>
+            <div>
+                <img src="venus.jpg" alt="Venus" class="flex-img">
+                <p>Venus is the second planet from the Sun and is Earth’s “twin” in size and composition. It is the hottest planet due to a runaway greenhouse effect. Venus shines as the Morning or Evening Star, being the brightest object after the Sun and Moon.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Formation -->
+    <div id="formation" class="card">
+        <details open>
+            <summary>Formation & Evolution</summary>
+            <div>
+                <p>Venus formed ~4.5 billion years ago from the protoplanetary disk. Initially, it may have had moderate temperatures, volcanism, and possibly surface water.</p>
+                <p>Increasing solar energy evaporated water, triggering a runaway greenhouse effect. Ultraviolet radiation broke water molecules apart, hydrogen escaped, oxygen reacted with rocks, and volcanic CO₂ trapped heat, creating today’s superheated Venus.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Key Characteristics -->
+    <div id="characteristics" class="card">
+        <details open>
+            <summary>Key Characteristics</summary>
+            <div>
+                <ul>
+                    <li>Diameter & mass similar to Earth; hottest planet due to runaway greenhouse</li>
+                    <li>Surface temp: ~465°C (870°F), pressure ~92–93× Earth’s</li>
+                    <li>Atmosphere: 96% CO₂, sulfuric acid clouds</li>
+                    <li>Surface: vast volcanic plains, mountains, lava flows (~85%)</li>
+                    <li>Highlands: Aphrodite Terra, Ishtar Terra</li>
+                    <li>Slow retrograde rotation; one Venus day > one Venus year</li>
+                    <li>No natural moons; quasi-satellite: 2002 VE68</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Atmosphere -->
+    <div id="atmosphere" class="card">
+        <details open>
+            <summary>Venus Atmosphere</summary>
+            <div>
+                <p>Venus’ dense atmosphere is mostly CO₂ (~96%) and nitrogen (~3.5%), with sulfur dioxide traces.</p>
+                <p><strong>Lower Atmosphere:</strong> Crushing pressure and intense heat</p>
+                <p><strong>Cloud Layer:</strong> Sulfuric acid clouds reflecting sunlight</p>
+                <p><strong>Upper Atmosphere:</strong> Winds up to 360 km/h, circling the planet in days (super-rotation)</p>
+                <p>This layered atmosphere drives the runaway greenhouse effect.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Orbits -->
+    <div id="orbits" class="card">
+        <details open>
+            <summary>Orbits & Motion</summary>
+            <div>
+                <ul>
+                    <li>Second planet from Sun, nearly circular orbit</li>
+                    <li>Retrograde rotation (spins backward)</li>
+                    <li>Rotation period: 243 Earth days; orbit: 224.7 days → day longer than year</li>
+                    <li>Dense atmosphere slows surface winds, but upper clouds circle planet in days at 360 km/h</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Missions -->
+    <div id="missions" class="card">
+        <details open>
+            <summary>Key Missions</summary>
+            <div>
+                <ul>
+                    <li><strong>Mariner 2 (NASA, 1962):</strong> First successful flyby of another planet</li>
+                    <li><strong>Venera Program (USSR):</strong> First soft landings and surface images (Venera 7, 9, 10)</li>
+                    <li><strong>Magellan (NASA):</strong> Radar mapping of the entire surface</li>
+                    <li><strong>Venus Express (ESA):</strong> Studied atmosphere and ionosphere</li>
+                    <li><strong>Akatsuki (JAXA):</strong> Studying atmospheric dynamics since 2015</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <a href="secondmain.html" class="btn">Back to Space</a>
+
+</div>
+
+</body>
+</html>

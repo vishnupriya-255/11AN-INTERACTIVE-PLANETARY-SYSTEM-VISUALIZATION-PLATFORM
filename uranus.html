@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uranus Info Portal</title>
+
+<style>
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body background for Uranus theme */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(ellipse at center, #aee6ff 0%, #0b1d3a 100%);
+    color: #e0f7ff;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #d0f0ff;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #aee6ff;
+}
+
+.sidebar a {
+    display: block;
+    color: #aee6ff;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #0b1d3a;
+    color: #fff;
+}
+
+/* Main Content */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+}
+
+/* Cards */
+.card {
+    background: rgba(0, 77, 128, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.flex-img {
+    float: left;
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 100px;
+    
+}
+
+.flex-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #0ff;
+}
+
+.section-title {
+    color: #00ffff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Details/Accordion styling */
+details {
+    background: rgba(0, 170, 255, 0.2);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+summary {
+    font-size: 18px;
+    color: #00ffff;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: ' ▾';
+    float: right;
+}
+
+details[open] summary::after {
+    content: ' ▴';
+}
+
+details div {
+    padding: 10px 0 0 0;
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    border: 2px solid #00ffff;
+    background: linear-gradient(135deg, #0b1d3a, #005f99);
+    color: #aee6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #0ff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .flex-img {
+        width: 120px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Uranus Info</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#formation">Formation & Evolution</a>
+    <a href="#characteristics">Key Characteristics</a>
+    <a href="#atmosphere">Atmosphere Layers</a>
+    <a href="#orbits">Orbits & Motion</a>
+    <a href="#missions">Key Missions</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1 style="text-align:center;">Uranus: The Ice Giant with a Twist</h1>
+
+    <!-- Introduction -->
+    <div id="introduction" class="card">
+        <details open>
+            <summary>Introduction</summary>
+            <div>
+                <img src="uranus.jpg" alt="Uranus" class="flex-img">
+                <p>Uranus is the seventh planet from the Sun and one of the four giant planets in the solar system. Classified as an ice giant, it is famous for its extreme axial tilt, which causes it to rotate almost on its side. This unusual orientation leads to bizarre and extreme seasons unlike any other planet. Uranus appears blue-green due to methane in its atmosphere and takes 84 Earth years to complete one orbit around the Sun.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Formation -->
+    <div id="formation" class="card">
+        <details open>
+            <summary>Formation and Evolution</summary>
+            <div>
+                <p>Uranus formed about 4.5 billion years ago from the solar nebula, a vast cloud of gas and dust left over after the formation of the Sun. Its icy composition distinguishes Uranus as an ice giant with a dense icy mantle surrounding a small rocky core.</p>
+                <p>A massive collision or gravitational interaction likely caused its extreme axial tilt of ~98°, influencing its long-term evolution, magnetic field, ring system, and moon orbits.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Key Characteristics -->
+    <div id="characteristics" class="card">
+        <details open>
+            <summary>Key Characteristics</summary>
+            <div>
+                <ul>
+                    <li>Uranus is an ice giant composed mainly of water, ammonia, and methane ices.</li>
+                    <li>Its blue-green color comes from methane absorbing red light.</li>
+                    <li>Coldest atmosphere in the solar system: down to 49 K (-224°C).</li>
+                    <li>Winds reach speeds of up to 900 km/h.</li>
+                    <li>Extreme axial tilt (~97.77°) causes rotation on its side.</li>
+                    <li>No solid surface; made of swirling fluids and dense gases.</li>
+                    <li>Tilted and offset magnetic field produces irregular auroras.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Atmosphere -->
+    <div id="atmosphere" class="card">
+        <details open>
+            <summary>Layers of Uranus Atmosphere</summary>
+            <div>
+                <ul>
+                    <li>Troposphere – Clouds, storms, most weather activity</li>
+                    <li>Stratosphere – Haze and hydrocarbons</li>
+                    <li>Thermosphere – Extremely cold and sparse</li>
+                </ul>
+                <p>Main Gases:</p>
+                <ul>
+                    <li>Hydrogen: ~83%</li>
+                    <li>Helium: ~15%</li>
+                    <li>Methane: ~2.3%</li>
+                    <li>Trace gases: Ammonia, water vapor, hydrogen sulfide, acetylene, ethane</li>
+                </ul>
+                <p>Internal Structure:</p>
+                <ol>
+                    <li>Upper Atmosphere: Cold, hazy</li>
+                    <li>Icy Mantle: Dense fluid of water, methane, ammonia</li>
+                    <li>Core: Small rocky core</li>
+                </ol>
+            </div>
+        </details>
+    </div>
+
+    <!-- Orbits -->
+    <div id="orbits" class="card">
+        <details open>
+            <summary>Orbits and Motion</summary>
+            <div>
+                <ul>
+                    <li>Orbital Period: 84 Earth years</li>
+                    <li>Rotation Period: ~17 hours 14 minutes</li>
+                    <li>Distance from Sun: ~19.2 AU (2.87 billion km)</li>
+                    <li>Extreme Seasons: Each pole gets 42 years of sunlight/darkness</li>
+                    <li>Total Moons: 28 known</li>
+                    <li>Major Moons: Titania, Oberon, Umbriel, Ariel, Miranda</li>
+                    <li>Rings: 3 narrow rings of ice particles and dust; orbit sideways</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Missions -->
+    <div id="missions" class="card">
+        <details open>
+            <summary>Key Missions</summary>
+            <div>
+                <ul>
+                    <li><strong>Voyager 2 (1986):</strong> First and only spacecraft to visit Uranus. Discovered 10 new moons, faint rings, and tilted magnetic field.</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <a href="secondmain.html" class="btn">Back to Space</a>
+
+</div>
+
+</body>
+</html>
+

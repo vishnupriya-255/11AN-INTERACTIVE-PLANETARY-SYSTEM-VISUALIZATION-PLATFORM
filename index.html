@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Planetary System Platform</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("back.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #1bd8c8;
+    text-shadow: 0 0 15px #a90fdd;
+}
+
+/* PLANETS SECTION */
+.planets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 20px;
+}
+
+.planet {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s ease;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.planet:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 40px magenta;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-12px); }
+}
+
+/* AUTH BOX */
+.auth-box {
+    background: rgba(0,0,0,0.75);
+    padding: 30px;
+    max-width: 420px;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #aee6ff;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.toggle button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #123c6b;
+    color: white;
+}
+
+.toggle button.active {
+    background: #1bd8c8;
+    color: black;
+}
+
+.auth-box input,
+.auth-box select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+.auth-box input[type="submit"] {
+    background: linear-gradient(135deg, #0b1d3a, #123c6b);
+    color: #aee6ff;
+    cursor: pointer;
+}
+
+.register-fields {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>Interactive Planetary System Platform</header>
+
+<!-- 🌍 PLANETS -->
+<div class="planets">
+
+<div class="planet" data-info="I am the Sun, the center of our solar system!"
+style="background:url('sun image.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Mercury: The fastest planet!"
+style="background:url('mercury.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Venus: The hottest planet!"
+style="background:url('venus.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Earth: Your home planet!"
+style="background:url('earth.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Mars: The red planet!"
+style="background:url('mars.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Jupiter: The largest planet!"
+style="background:url('jupitor.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Saturn: Beautiful rings!"
+style="background:url('saturn.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Uranus: Spins sideways!"
+style="background:url('uranus.jpg') center/cover;"></div>
+
+<div class="planet" data-info="Neptune: The windiest planet!"
+style="background:url('neptune.jpg') center/cover;"></div>
+
+</div>
+
+<!-- 🔐 AUTH SECTION -->
+<div class="auth-box">
+
+    <div class="toggle">
+        <button id="loginBtn" class="active">Sign In</button>
+        <button id="registerBtn">Register</button>
+    </div>
+
+    <form id="authForm">
+
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="password" id="password" placeholder="Your Password" required>
+
+        <div class="register-fields" id="extraFields">
+            <select id="favoritePlanet">
+                <option value="">Favorite Planet</option>
+                <option>Mercury</option>
+                <option>Venus</option>
+                <option>Earth</option>
+                <option>Mars</option>
+                <option>Jupiter</option>
+                <option>Saturn</option>
+                <option>Uranus</option>
+                <option>Neptune</option>
+            </select>
+        </div>
+
+        <input type="submit" id="submitBtn" value="Sign In">
+
+    </form>
+</div>
+
+<script>
+
+/* Planet Click Alert */
+document.querySelectorAll(".planet").forEach(planet => {
+    planet.addEventListener("click", function() {
+        alert(this.dataset.info);
+    });
+});
+
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+const extraFields = document.getElementById("extraFields");
+const submitBtn = document.getElementById("submitBtn");
+
+let isRegister = false;
+
+/* Toggle Register */
+registerBtn.addEventListener("click", () => {
+    isRegister = true;
+    extraFields.style.display = "block";
+    submitBtn.value = "Register";
+    registerBtn.classList.add("active");
+    loginBtn.classList.remove("active");
+});
+
+/* Toggle Login */
+loginBtn.addEventListener("click", () => {
+    isRegister = false;
+    extraFields.style.display = "none";
+    submitBtn.value = "Sign In";
+    loginBtn.classList.add("active");
+    registerBtn.classList.remove("active");
+});
+
+/* Form Submit */
+document.getElementById("authForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if(isRegister){
+        const planet = document.getElementById("favoritePlanet").value;
+
+        if(planet === ""){
+            alert("Please select favorite planet!");
+            return;
+        }
+
+        localStorage.setItem("spaceUserName", name);
+        localStorage.setItem("spaceUserPassword", password);
+        localStorage.setItem("favoritePlanet", planet);
+
+        alert("Registration Successful 🚀");
+        window.location.href = "dashboard.html";
+
+    } else {
+        const storedName = localStorage.getItem("spaceUserName");
+        const storedPassword = localStorage.getItem("spaceUserPassword");
+
+        if(name === storedName && password === storedPassword){
+            alert("Login Successful 🌍");
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Invalid Credentials!");
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>

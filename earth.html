@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Earth Info Portal</title>
+
+<style>
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body background for Earth theme */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient( #08ce0f 0%, #17b9b1 70%, #001999 100%);
+    color: #140441;
+    
+   
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff1cc;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    display: block;
+    color: #9cff00;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #009933;
+    color: #fff;
+}
+
+/* Main Content */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+}
+
+/* Cards */
+.card {
+    background: rgba(0, 51, 102, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Image styling */
+.flex-img {
+    float: left;
+    width: 100px;
+    margin-right: 15px;
+    border-radius: 100px;
+    transition: transform 0.3s ease;
+}
+
+.flex-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fff;
+}
+
+/* Section Titles */
+.section-title {
+    color: #9cff00;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Accordion / Details */
+details {
+    background: rgba(153, 255, 51, 0.8);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+details div {
+    padding: 10px 0 0 0;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    border: 2px solid #9cff00;
+    background: linear-gradient(135deg, #006600, #003300);
+    color: #fff4cc;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(153,255,51,0.8);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .flex-img {
+        width: 100px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Earth Info</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#formation">Formation & Evolution</a>
+    <a href="#characteristics">Key Characteristics</a>
+    <a href="#atmosphere">Atmosphere</a>
+    <a href="#orbits">Orbits & Motion</a>
+    <a href="#missions">Key Missions</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1 style="text-align:center;">Earth: The Living Planet</h1>
+
+    <!-- Introduction -->
+    <div id="introduction" class="card">
+        <details open>
+            <summary>Introduction</summary>
+            <div>
+                <img src="earth.jpg" alt="Earth" class="flex-img">
+                <p>Earth is our home planet and the third from the Sun. It supports life and has abundant liquid water on its surface, with 71% covered by water and 29% land. Earth has a protective atmosphere, one natural satellite (the Moon), and well-defined day–night cycles and seasons.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Formation -->
+    <div id="formation" class="card">
+        <details open>
+            <summary>Formation & Evolution</summary>
+            <div>
+                <p>Earth formed about 4.5 billion years ago from clouds of dust and gas left over after the Sun's formation. Heavy materials sank to form the core, while lighter materials created the crust and mantle.</p>
+                <p>Early Earth was hot with volcanic activity. Gases released formed the early atmosphere, while water vapor condensed into oceans. Tectonic movements, erosion, and water cycles shaped the surface, creating a stable environment for life.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Key Characteristics -->
+    <div id="characteristics" class="card">
+        <details open>
+            <summary>Key Characteristics</summary>
+            <div>
+                <ul>
+                    <li>Third planet from the Sun; supports life and liquid water</li>
+                    <li>71% water, 29% land; one natural satellite: the Moon</li>
+                    <li>Rotation: 24 hours; Revolution: 365.25 days, causing seasons</li>
+                    <li>Strong magnetic field shields from solar winds</li>
+                    <li>Active plate tectonics reshape the surface</li>
+                    <li>Moon stabilizes axial tilt for climate stability</li>
+                    <li>Diverse biosphere with millions of species</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Atmosphere -->
+    <div id="atmosphere" class="card">
+        <details open>
+            <summary>Earth Atmosphere</summary>
+            <div>
+                <p>Earth's atmosphere provides oxygen, blocks harmful UV radiation, regulates temperature, and burns meteors.</p>
+                <p><strong>Composition:</strong> Nitrogen 78%, Oxygen 21%, Argon 0.9%, CO₂ 0.04%, Trace gases, Dust & Aerosols</p>
+                <p><strong>Layers:</strong> Troposphere (weather), Stratosphere (ozone), Mesosphere (cold, meteors), Thermosphere (auroras), Exosphere (outermost layer)</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Orbits -->
+    <div id="orbits" class="card">
+        <details open>
+            <summary>Orbits & Motion</summary>
+            <div>
+                <ul>
+                    <li>Earth has one Moon orbiting elliptically, tidally locked</li>
+                    <li>Moon phases repeat every 29.5 days (synodic period)</li>
+                    <li>Earth–Moon system orbits Sun together</li>
+                    <li>Earth has no rings; Moon has no moons</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Missions -->
+    <div id="missions" class="card">
+        <details open>
+            <summary>Key Missions</summary>
+            <div>
+                <ul>
+                    <li><strong>Satellites & ISS:</strong> Monitor climate, oceans, land, and atmosphere</li>
+                    <li><strong>NASA Earth Science Division:</strong> Studies Earth's systems and environmental changes</li>
+                    <li><strong>Exploration Programs:</strong> Artemis (Moon & Mars), Earth observation missions</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <a href="secondmain.html" class="btn">Back to Space</a>
+
+</div>
+
+</body>
+</html>

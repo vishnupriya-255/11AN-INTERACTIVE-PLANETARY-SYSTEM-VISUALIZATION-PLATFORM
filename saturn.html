@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saturn Info Portal</title>
+
+<style>
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body background for Saturn theme */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(#c86c09 0%, #de8b38 70%, #cc9966 100%);
+    color: #fff4cc;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff1cc;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffd966;
+    padding: 12px 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #cc9966;
+    color: #fff;
+}
+
+/* Main Content */
+.content {
+    margin-left: 270px;
+    padding: 40px;
+}
+
+/* Cards */
+.card {
+    background: rgba(204, 153, 102, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Image styling */
+.flex-img {
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+    border-radius: 100px;
+    transition: transform 0.3s ease;
+}
+
+.flex-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fff;
+}
+
+/* Section Titles */
+.section-title {
+    color: #ffd966;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Accordion / Details */
+details {
+    background: rgba(255, 204, 153, 0.8);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+details div {
+    padding: 10px 0 0 0;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    border: 2px solid #ffd966;
+    background: linear-gradient(135deg, #ffcc99, #cc9966);
+    color: #fff4cc;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,204,102,0.8);
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 25px #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 220px;
+        padding: 20px;
+    }
+    .flex-img {
+        width: 100px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Saturn Info</h2>
+    <a href="#introduction">Introduction</a>
+    <a href="#formation">Formation & Evolution</a>
+    <a href="#characteristics">Key Characteristics</a>
+    <a href="#atmosphere">Atmosphere</a>
+    <a href="#orbits">Orbits & Motion</a>
+    <a href="#missions">Key Missions</a>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <h1 style="text-align:center;">Saturn: The Jewel of the Solar System</h1>
+
+    <!-- Introduction -->
+    <div id="introduction" class="card">
+        <details open>
+            <summary>Introduction</summary>
+            <div>
+                <img src="saturn.jpg" alt="Saturn" class="flex-img">
+                <p>Saturn is the sixth planet from the Sun and the second largest in the Solar System, famous for its rings. A gas giant composed of hydrogen and helium, it has no solid surface, and its moons, especially Titan, show Earth-like features such as lakes, rivers, dunes, and rocky terrains.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Formation -->
+    <div id="formation" class="card">
+        <details open>
+            <summary>Formation & Evolution</summary>
+            <div>
+                <p>Saturn formed early from dust and gas in the solar nebula, accumulating a massive hydrogen-helium envelope around a rocky or metallic core. Rapid rotation, internal heat, and convective atmospheric motions shaped its cloud bands, storms, and rings. Gravity captured numerous moons and sculpted the outer Solar System.</p>
+                <p>Moons like Titan and Enceladus maintain ring structure, while internal heat drives convection, fueling jet streams and massive storms, including the Great White Spot.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Key Characteristics -->
+    <div id="characteristics" class="card">
+        <details open>
+            <summary>Key Characteristics</summary>
+            <div>
+                <ul>
+                    <li>Gas giant: hydrogen (~75%) and helium (~25%), no solid surface</li>
+                    <li>Fast rotation: ~10 hours 13 minutes</li>
+                    <li>Orbital period: ~29.5 Earth years</li>
+                    <li>Density less than water; would float in a large enough ocean</li>
+                    <li>Atmosphere: swirling bands, violent storms, jet streams up to 1,800 km/h, Great White Spot</li>
+                    <li>Interior: gaseous hydrogen, liquid hydrogen, metallic hydrogen, rocky core</li>
+                    <li>Moons: >250 including Titan, Enceladus, Rhea, Iapetus</li>
+                    <li>Unique: moons interact gravitationally with rings</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <!-- Atmosphere -->
+    <div id="atmosphere" class="card">
+        <details open>
+            <summary>Saturn Atmosphere</summary>
+            <div>
+                <p>Saturn’s atmosphere has layered clouds:</p>
+                <ul>
+                    <li>Top: Ammonia ice clouds</li>
+                    <li>Middle: Ammonium hydrosulfide clouds</li>
+                    <li>Bottom: Water ice clouds</li>
+                </ul>
+                <ol>
+                    <li>Winds and storms create banded appearance and jet streams over 1,000–1,800 km/h</li>
+                    <li>Internal heat and “ice rain” from rings influence dynamics</li>
+                </ol>
+            </div>
+        </details>
+    </div>
+
+    <!-- Orbits -->
+    <div id="orbits" class="card">
+        <details open>
+            <summary>Orbits & Motion</summary>
+            <div>
+                <ol>
+                    <li>Rotation period: ~10 hours 13 minutes</li>
+                    <li>Orbital period: ~29.5 Earth years</li>
+                    <li>Axis tilt: ~27°, mild seasons</li>
+                    <li>Moons’ orbits: regular moons prograde, outer irregular moons retrograde</li>
+                    <li>Moons like Janus & Epimetheus interact with rings; Saturn’s gravity shapes ring dynamics</li>
+                </ol>
+            </div>
+        </details>
+    </div>
+
+    <!-- Missions -->
+    <div id="missions" class="card">
+        <details open>
+            <summary>Key Missions</summary>
+            <div>
+                <ul>
+                    <li>Pioneer 11 (1979): first spacecraft to Saturn, discovered moons and imaged rings</li>
+                    <li>Voyager 1 & 2 (1980-1981): detailed flybys of rings, moons, magnetosphere</li>
+                    <li>Cassini-Huygens (2004–2017): orbited Saturn for 13 years, studied planet, rings, moons</li>
+                    <li>Huygens Probe: landed on Titan in 2005, first landing in outer Solar System</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+
+    <a href="secondmain.html" class="btn">Back to Space</a>
+
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Planet Quiz</title>
+
+<style>
+body{
+    font-family: Arial;
+    background-image: url("space1.jpg");
+   background-repeat: repeat;
+background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 70px;
+}
+.dashboard-btn{
+    display:block;
+    margin:40px auto;
+    padding:14px 35px;
+    font-size:1.1em;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(45deg, #1e90ff, #00bfff);
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    box-shadow:0 0 20px #1e90ff;
+    transition:0.3s ease-in-out;
+}
+
+.dashboard-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px #00bfff;
+    background:linear-gradient(45deg, #00bfff, #1e90ff);
+}
+
+button{
+    padding: 20px 30px;
+    margin: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #0dc4d1;
+    color: black;
+}
+
+.score{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.hidden{
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1> Planet Quiz</h1>
+
+<!-- QUIZ TYPE SELECTION -->
+<div id="menu">
+    <h2>Select Quiz Type</h2>
+    <button onclick="startQuiz('mcq')">MCQ Quiz</button>
+    <button onclick="startQuiz('tf')">True / False Quiz</button>
+</div>
+
+<!-- QUIZ AREA -->
+<div id="quizArea" class="hidden">
+    <h3 id="question"></h3>
+    <div id="options"></div>
+    <p id="result"></p>
+
+    <div class="score">
+        Score: <span id="score">0</span>
+    </div>
+
+    <br>
+    <button onclick="goBack()">Back to Dashboard</button>
+</div>
+
+<script>
+
+// ================= MCQ QUESTIONS =================
+let mcqQuestions = [
+
+{q:"Which planet has the longest day (rotation period)?",
+ options:["Venus","Mercury","Neptune","Mars"],
+ answer:"Venus"},
+
+{q:"Which planet has the strongest gravity?",
+ options:["Earth","Jupiter","Saturn","Mars"],
+ answer:"Jupiter"},
+
+{q:"Which planet rotates on its side (98° tilt)?",
+ options:["Uranus","Neptune","Venus","Saturn"],
+ answer:"Uranus"},
+
+{q:"Which planet has the fastest winds?",
+ options:["Earth","Neptune","Mars","Jupiter"],
+ answer:"Neptune"},
+
+{q:"Which planet has Olympus Mons volcano?",
+ options:["Earth","Mars","Mercury","Venus"],
+ answer:"Mars"},
+
+{q:"Which planet has the shortest year?",
+ options:["Mercury","Earth","Mars","Venus"],
+ answer:"Mercury"},
+
+{q:"Which planet has the thickest atmosphere?",
+ options:["Venus","Earth","Mars","Mercury"],
+ answer:"Venus"},
+
+{q:"Which planet contains the Great Red Spot?",
+ options:["Saturn","Jupiter","Uranus","Neptune"],
+ answer:"Jupiter"},
+
+{q:"Which planet has the most visible rings?",
+ options:["Saturn","Earth","Mars","Venus"],
+ answer:"Saturn"},
+
+{q:"Which planet is closest to the Sun?",
+ options:["Mercury","Venus","Earth","Mars"],
+ answer:"Mercury"}
+];
+
+// ================= TRUE/FALSE QUESTIONS =================
+let tfQuestions = [
+
+{q:"A year on Mercury is shorter than a day on Mercury.", answer:"True"},
+{q:"Venus rotates opposite to most planets.", answer:"True"},
+{q:"Jupiter is a terrestrial planet.", answer:"False"},
+{q:"Mars has two moons.", answer:"True"},
+{q:"Neptune is closer to the Sun than Uranus.", answer:"False"},
+{q:"Saturn could float in water due to low density.", answer:"True"},
+{q:"Uranus has no rings.", answer:"False"},
+{q:"The Sun is a planet.", answer:"False"},
+{q:"Earth has the largest volcano in the solar system.", answer:"False"},
+{q:"Mars is known as the Red Planet.", answer:"True"}
+
+];
+
+let currentQuiz = [];
+let current = 0;
+let score = 0;
+
+// ================= START QUIZ =================
+function startQuiz(type){
+
+document.getElementById("menu").classList.add("hidden");
+document.getElementById("quizArea").classList.remove("hidden");
+
+currentQuiz = (type === "mcq") ? mcqQuestions : tfQuestions;
+
+current = 0;
+score = 0;
+
+document.getElementById("score").innerText = score;
+
+loadQuestion();
+}
+
+// ================= LOAD QUESTION =================
+function loadQuestion(){
+
+let q = currentQuiz[current];
+
+document.getElementById("question").innerText =
+(current+1) + ". " + q.q;
+
+document.getElementById("result").innerText = "";
+
+let html = "";
+
+if(currentQuiz === mcqQuestions){
+
+    q.options.forEach(opt=>{
+        html += `<button onclick="checkAnswer('${opt}')">${opt}</button>`;
+    });
+
+}else{
+
+    html = `
+    <button onclick="checkAnswer('True')">True</button>
+    <button onclick="checkAnswer('False')">False</button>
+    `;
+}
+
+document.getElementById("options").innerHTML = html;
+
+}
+
+// ================= CHECK ANSWER =================
+function checkAnswer(selected){
+
+if(selected === currentQuiz[current].answer){
+    score++;
+}
+
+document.getElementById("score").innerText = score;
+
+// auto skip after 0.6 sec
+setTimeout(() => {
+    nextQuestion();
+}, 600);
+
+}
+
+// ================= NEXT QUESTION =================
+function nextQuestion(){
+
+current++;
+
+if(current >= currentQuiz.length){
+    showFinalResult();
+    return;
+}
+
+loadQuestion();
+
+}
+
+// ================= FINAL RESULT =================
+function showFinalResult(){
+
+document.getElementById("question").innerText =
+"Quiz Finished 🎉";
+
+document.getElementById("options").innerHTML = "";
+document.getElementById("result").innerHTML =
+"Your Final Score: <b>" + score + " / " + currentQuiz.length + "</b>";
+
+localStorage.setItem("quizScore", score);
+
+}
+
+// ================= BACK =================
+function goBack(){
+window.location.href="dashboard.html";
+}
+
+</script>
+<button class="dashboard-btn" onclick="location.href='dashboard.html'">
+     Back to Dashboard
+</button>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Planet Platform</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("back.jpg");
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+    padding: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: cyan;
+}
+
+.planets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 20px;
+}
+
+.planet {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.planet:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px magenta;
+}
+
+/* Auth Box */
+.auth-box {
+    background: rgba(0,0,0,0.7);
+    padding: 25px;
+    max-width: 400px;
+    margin: 40px auto;
+    border-radius: 15px;
+    text-align:center;
+}
+
+.auth-box input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding:8px 15px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>Interactive Planetary System Platform</header>
+
+<div class="planets">
+
+<div class="planet" data-info="Sun: Center of solar system" style="background:url('sun\ image.jpg') center/cover;"></div>
+<div class="planet" data-info="Mercury: Closest planet" style="background:url('mercury.jpg') center/cover;"></div>
+<div class="planet" data-info="Venus: Hottest planet" style="background:url('venus.jpg') center/cover;"></div>
+<div class="planet" data-info="Earth: Our home" style="background:url('earth.jpg') center/cover;"></div>
+<div class="planet" data-info="Mars: Red planet" style="background:url('mars.jpg') center/cover;"></div>
+<div class="planet" data-info="Jupiter: Largest planet" style="background:url('jupitor.jpg') center/cover;"></div>
+<div class="planet" data-info="Saturn: Ringed planet" style="background:url('saturn.jpg') center/cover;"></div>
+<div class="planet" data-info="Uranus: Ice giant" style="background:url('uranus.jpg') center/cover;"></div>
+<div class="planet" data-info="Neptune: Windiest planet" style="background:url('neptune.jpg') center/cover;"></div>
+
+</div>
+
+<div class="auth-box">
+<h3>Login</h3>
+<input type="text" id="name" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<script>
+
+document.querySelectorAll(".planet").forEach(p=>{
+p.addEventListener("click",function(){
+alert(this.dataset.info);
+});
+});
+
+function login(){
+let name=document.getElementById("name").value;
+let pass=document.getElementById("password").value;
+
+if(name && pass){
+localStorage.setItem("spaceUserName",name);
+window.location.href="dashboard.html";
+}else{
+alert("Enter details");
+}
+}
+
+</script>
+
+</body>
+</html>
